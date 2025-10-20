@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Download the Guidelines 2025 App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <script>
+    window.onload = function () {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // iOS detection
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://apps.apple.com/us/app/erc-guidelines/id6752244545";
+      }
+
+      // Android detection
+      else if (/android/i.test(userAgent)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=edu.erc.guidelines";
+      }
+
+      // Fallback (Desktop or unknown)
+      else {
+        document.getElementById("fallback").style.display = "block";
+      }
+    };
+  </script>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #003F8B;
+  }
+
+  #fallback {
+    max-width: 600px;
+    margin: 100px auto 0;
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* QR Code image */
+  #fallback img[alt="Scan the QR code"] {
+    display: block;
+    margin: 0 auto 2rem auto;
+    max-width: 250px;
+  }
+
+  /* Store buttons container */
+  .store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .store-buttons a {
+    flex: 1 1 45%;
+    max-width: 150px;
+  }
+
+  .store-buttons img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .logo-header {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.logo-header img {
+  height: 120px;
+  width: auto;
+}
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .store-buttons a {
+      flex: 1 1 100%;
+      max-width: 200px;
+    }
+    
+  }
+</style>
+
+</head>
+<body>
+  <header class="logo-header">
+    <img src="logoERC.png" alt="ERC Logo">
+  </header>
+  <div id="fallback" style="display: none; text-align: center; padding: 2rem;">
+    <h1>Download the Guidelines 2025 App</h1>
+    <p>Please scan the QR code below or visit the app store on your mobile device.</p>
+    <img src="frame.png" alt="Scan the QR code">
+    <div class="store-buttons">
+      <a href="https://apps.apple.com/us/app/erc-guidelines/id6752244545" target="_blank">
+        <img src="appStore.jpg" alt="Download on the App Store">
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=edu.erc.guidelines" target="_blank">
+        <img src="googlePlay.jpg" alt="Get it on Google Play">
+      </a>
+    </div>
+  </div>
+</body>
+</html>
